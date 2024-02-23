@@ -6,11 +6,18 @@ export const metadata = {
     description: 'Краткое описание для поисковых движков',
 }
 
+interface IData {
+    "name": string,
+    "description": string,
+    "highlights": string[],
+    "details": string
+}
+
 export default async function Example({ params }: {
     params: { exampleId: string }
 }) {
-    const file = await fs.readFile(process.cwd() + '/public/examples/'+params.exampleId+'/data.json', 'utf8');
-    const data = JSON.parse(file);
+    const file = await fs.readFile(process.cwd() + '/public/examples/' + params.exampleId + '/data.json', 'utf8');
+    const data:IData = JSON.parse(file);
     return (
         <div className="bg-white">
             <div className="pt-6">
