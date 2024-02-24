@@ -9,21 +9,21 @@ const callouts = [
       description: 'Пример карточки портфолио',
       imageSrc: '/examples/1/1.jpg',
       imageAlt: 'Бассейн 1',
-      href: '/examples/1',
+      href: '/examples/test',
     },
     {
       name: 'Работа 2',
       description: 'Еще один пример',
       imageSrc: '/examples/2/1.jpg',
       imageAlt: 'Бассейн 2',
-      href: '/examples/2',
+      href: '/examples/test',
     },
     {
       name: 'Работа 3',
       description: 'Третий пример',
       imageSrc: '/examples/3/1.jpg',
       imageAlt: 'Бассейн 3',
-      href: '/examples/3',
+      href: '/examples/test',
     },
   ]
 
