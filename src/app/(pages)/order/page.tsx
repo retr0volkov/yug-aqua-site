@@ -5,7 +5,7 @@ title: 'Заказать бассейн',
 description: 'Краткое описание для поисковых движков',
 }
 
-export default function Example() {
+export default function Order() {
     return (
         <form className='px-12 mb:px-24 xl:px-96'>
             <div className="border-b pt-12 border-gray-900/10 pb-12">
@@ -123,42 +123,6 @@ export default function Example() {
                             </div>
                         </div>
                     </div>
-                    <fieldset>
-                        <legend className="text-sm font-semibold leading-6 text-gray-900">Дополнительные услуги</legend>
-                        <div className="mt-6 space-y-6">
-                            <div className="relative flex gap-x-3">
-                                <div className="flex h-6 items-center">
-                                    <input
-                                        id="stairs"
-                                        name="stairs"
-                                        type="checkbox"
-                                        className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                                    />
-                                </div>
-                                <div className="text-sm leading-6">
-                                    <label htmlFor="stairs" className="font-medium text-gray-900">
-                                        Ступени
-                                    </label>
-                                </div>
-                            </div>
-                            <div className="relative flex gap-x-3">
-                                <div className="flex h-6 items-center">
-                                    <input
-                                        id="hydrodrop"
-                                        name="hydrodrop"
-                                        type="checkbox"
-                                        className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                                    />
-                                </div>
-                                <div className="text-sm leading-6">
-                                    <label htmlFor="hydrodrop" className="font-medium text-gray-900">
-                                        Гидромассаж
-                                    </label>
-                                    <p className="text-gray-500">Какая то информация про услугу</p>
-                                </div>
-                            </div>
-                        </div>
-                    </fieldset>
                     <div className="col-span-full">
                         <label htmlFor="about" className="block text-sm font-medium leading-6 text-gray-900">
                             Допольнительная информация
@@ -172,7 +136,7 @@ export default function Example() {
                             defaultValue={''}
                             />
                         </div>
-                        <p className="mt-3 text-sm leading-6 text-gray-600">Дополнительная информация, если необходимо.</p>
+                        <p className="mt-3 text-sm leading-6 text-gray-600">Пожалуйста, укажите Ваши пожелания к бассейну, например, если Вам необходимо строительство ступеней, подключение гидромассажа и т.д.</p>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,11 @@
+import Menu from "@/components/menu";
+
 export default function Loading()
 {
     return (
-        <div className="spinner mx-auto mt-10"></div>
+        <>
+            <Menu></Menu>
+            <div className="spinner mx-auto mt-10"></div>
+        </>
     )
 }

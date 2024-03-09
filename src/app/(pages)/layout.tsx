@@ -1,6 +1,6 @@
-'use client'
+import ".//..//styles.css"
+import Menu from "@/components/menu"
 
-import "./styles.css"
 
 export default function MenuLayout({
   children
@@ -11,6 +11,7 @@ export default function MenuLayout({
   return (
     <>
       <html className="min-h-full" lang="ru">
+        <Menu></Menu>
         <main>
           <div className="">{children}</div>
         </main>
