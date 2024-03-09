@@ -36,7 +36,7 @@ export default function CartElement() {
 
     return (
         <div>
-            <button onClick={() => setOpen(true)} className='fixed top-2 right-2 w-12 h-12 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md'>
+            <button onClick={() => setOpen(true)} className='fixed z-10 rounded-full bg-gray-800 bottom-2 md:top-2 right-2 w-12 h-12 md:text-gray-300 md:hover:bg-gray-700 md:hover:text-white md:rounded-md'>
                 <ShoppingCartIcon className='h-8 w-8 m-2 text-neutral-200'></ShoppingCartIcon>
             </button>
             <Dialog as="div" open={open} className="relative z-10" onClose={() => setOpen(false)}>
