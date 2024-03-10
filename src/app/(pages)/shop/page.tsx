@@ -15,9 +15,36 @@ interface IData {
     "id": number
 }
 
+const data = [
+    {
+        "name": "Супер мега товар 1",
+        "description": "Описание супер мега товара, побольше такое чтобы круто выглядело для демки",
+        "price": "111₽",
+        "id": 1
+    },
+    {
+        "name": "Супер мега товар 2",
+        "description": "Описание супер мега товара, побольше такое чтобы круто выглядело для демки",
+        "price": "222₽",
+        "id": 2
+    },
+    {
+        "name": "Супер мега товар 3",
+        "description": "Описание супер мега товара, побольше такое чтобы круто выглядело для демки",
+        "price": "333₽",
+        "id": 3
+    }
+]
+
 export default async function Shop() {
-    const file = await fs.readFile(process.cwd() + '/public/shop/shop.json', 'utf8');
-    const data: IData[] = JSON.parse(file);
+
+    // const getShop = async () => {
+    //     const res = await fetch(process.env.SITE_URL + '/api/shop', { next: { revalidate: 10 } })
+    //     return res.json()
+    // }
+
+    // const data: IData[] = await getShop()
+
     return (
         <>
             <div className="bg-white">

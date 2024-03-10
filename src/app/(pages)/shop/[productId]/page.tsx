@@ -1,8 +1,6 @@
-import { notFound } from 'next/navigation';
-import { promises as fs } from 'fs';
-import Image from 'next/image';
 import '@/app/styles.css'
-import Link from 'next/link';
+import Image from 'next/image';
+import Add from '@/components/add';
 
 export const metadata = {
     title: 'Пример работ',
@@ -16,11 +14,38 @@ interface IData {
     "id": number
 }
 
-export default async function Example({ params }: {
+const data = [
+    {
+        "name": "Супер мега товар 1",
+        "description": "Описание супер мега товара, побольше такое чтобы круто выглядело для демки",
+        "price": "111₽",
+        "id": 1
+    },
+    {
+        "name": "Супер мега товар 2",
+        "description": "Описание супер мега товара, побольше такое чтобы круто выглядело для демки",
+        "price": "222₽",
+        "id": 2
+    },
+    {
+        "name": "Супер мега товар 3",
+        "description": "Описание супер мега товара, побольше такое чтобы круто выглядело для демки",
+        "price": "333₽",
+        "id": 3
+    }
+]
+
+export default async function Product({ params }: {
     params: { productId: number }
 }) {
-    const file = await fs.readFile(process.cwd() + '/public/shop/shop.json', 'utf8');
-    const data: IData[] = JSON.parse(file);
+
+    // const getShop = async () => {
+    //     const res = await fetch(process.env.SITE_URL + '/api/shop', { next: { revalidate: 10 } })
+    //     return res.json()
+    // }
+
+    // const data: IData[] = await getShop()
+
     return (
         <div className="bg-white">
             <div className="pt-6">
@@ -50,10 +75,7 @@ export default async function Example({ params }: {
                                     <p className="text-base text-gray-900">{data[params.productId - 1].description}</p>
                                 </div>
                             </div>
-                            <Link href={'/shop'} className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
-                                Добавить в корзину
-                            </Link>
-                            {/* ВСТАВИТЬ РЕДУКС ТУТ */}
+                            <Add productId={params.productId - 1} />
                         </div>
                     </div>
                 </div>

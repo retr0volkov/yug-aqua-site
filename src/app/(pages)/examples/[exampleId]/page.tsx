@@ -7,17 +7,66 @@ export const metadata = {
 }
 
 interface IData {
+    "id": number,
     "name": string,
+    "shortdesc": string,
     "description": string,
     "highlights": string[],
     "details": string
 }
 
+const data = [
+    {
+        "id": 1,
+        "name": "Это название работы 1",
+        "shortdesc": "Краткое описание",
+        "description": "Описание проделанной на объекте работы",
+        "highlights": [
+            "Список основных моментов по поводу работы",
+            "Пример 1",
+            "Пример 2",
+            "Пример 3"
+        ],
+        "details": "Краткое замечание или отметка в конце страницы"
+    },
+    {
+        "id": 2,
+        "name": "Это название работы 2",
+        "shortdesc": "Краткое описание",
+        "description": "Описание проделанной на объекте работы",
+        "highlights": [
+            "Список основных моментов по поводу работы",
+            "Пример 1",
+            "Пример 2",
+            "Пример 3"
+        ],
+        "details": "Краткое замечание или отметка в конце страницы"
+    },
+    {
+        "id": 3,
+        "name": "Это название работы 3",
+        "shortdesc": "Краткое описание",
+        "description": "Описание проделанной на объекте работы",
+        "highlights": [
+            "Список основных моментов по поводу работы",
+            "Пример 1",
+            "Пример 2",
+            "Пример 3"
+        ],
+        "details": "Краткое замечание или отметка в конце страницы"
+    }
+]
+
 export default async function Example({ params }: {
-    params: { exampleId: string }
+    params: { exampleId: number }
 }) {
-    const file = await fs.readFile(process.cwd() + '/public/examples/' + params.exampleId + '/data.json', 'utf8');
-    const data:IData = JSON.parse(file);
+    // const getExamples = async () => {
+    //     const res = await fetch(process.env.SITE_URL + '/api/examples', { next: { revalidate: 10 } })
+    //     return res.json()
+    // }
+
+    // const data: IData[] = await getExamples()
+
     return (
         <div className="bg-white">
             <div className="pt-6">
@@ -56,7 +105,7 @@ export default async function Example({ params }: {
                     {/* Product info */}
                     <div className="mx-auto max-w-2xl px-4 pb-16 pt-10 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pb-24 lg:pt-16 lg:col-span-2">
                         <div className="lg:col-span-3 lg:pr-8">
-                            <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">{data.name}</h1>
+                            <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">{data[params.exampleId-1].name}</h1>
                         </div>
 
                         <div className="py-10 lg:col-span-3 lg:col-start-1 lg:pb-16 lg:pr-8 lg:pt-6">
@@ -64,7 +113,7 @@ export default async function Example({ params }: {
                             <div>
                                 <h3 className="sr-only">Description</h3>
                                 <div className="space-y-6">
-                                    <p className="text-base text-gray-900">{data.description}</p>
+                                    <p className="text-base text-gray-900">{data[params.exampleId-1].description}</p>
                                 </div>
                             </div>
 
@@ -73,7 +122,7 @@ export default async function Example({ params }: {
 
                                 <div className="mt-4">
                                     <ul role="list" className="list-disc space-y-2 pl-4 text-sm">
-                                        {data.highlights.map((highlight) => (
+                                        {data[params.exampleId-1].highlights.map((highlight) => (
                                             <li key={highlight} className="text-gray-400">
                                                 <span className="text-gray-600">{highlight}</span>
                                             </li>
@@ -86,7 +135,7 @@ export default async function Example({ params }: {
                                 <h2 className="text-sm font-medium text-gray-900">Заметки</h2>
 
                                 <div className="mt-4 space-y-6">
-                                    <p className="text-sm text-gray-600">{data.details}</p>
+                                    <p className="text-sm text-gray-600">{data[params.exampleId-1].details}</p>
                                 </div>
                             </div>
                         </div>
