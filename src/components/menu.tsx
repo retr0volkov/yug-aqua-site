@@ -12,6 +12,7 @@ const navigation = [
     { name: 'Портфолио', href: '/examples' },
     { name: 'Контакты', href: '/contact' },
     { name: 'Товары', href: '/shop' },
+    { name: 'Заявка', href: '/order'}
 ]
 
 export default function Menu() {
