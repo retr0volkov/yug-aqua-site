@@ -40,17 +40,6 @@ export default function Order() {
                                     Скиммерный
                                 </label>
                             </div>
-                            <div className="flex items-center gap-x-3">
-                                <input
-                                id="idk"
-                                name="type"
-                                type="radio"
-                                className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                                />
-                                <label htmlFor="idk" className="block text-sm font-medium leading-6 text-gray-900">
-                                    ...
-                                </label>
-                            </div>
                         </div>
                     </fieldset>
                     <fieldset>

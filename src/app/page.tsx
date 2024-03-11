@@ -14,7 +14,7 @@ export default function Example() {
       <main>
         <Image className="mx-auto mt-0" height={720} width={1280} src={'/img/title1.png'} alt="YUG_AQUA full screen logo"></Image>
         <div className="mx-0"><Menu /></div>
-        <Image className="mx-auto mb-0" height={720} width={1280} src={'/img/title2.png'} alt="YUG_AQUA contact info"></Image>
+        <Image className="mx-auto mb-0" height={1280} width={912} src={'/img/title2.jpg'} alt="YUG_AQUA contact info"></Image>
         <div className="text-center text-xl mb-2">
           <p>Индивидуальный предприниматель Ганган Александр Сергеевич</p>
           <p>8 (909) 451-35-53</p>
